@@ -9,6 +9,7 @@
 - [Building the agent](#building-the-agent)
   - [Building test agents](#building-test-agents)
   - [Building release agents](#building-release-agents)
+- [Code of Conduct](#code-of-conduct)
 
 If you are an active contributor to the OMI project, you should
 [set up your system]
@@ -187,3 +188,12 @@ to build OMI as Microsoft normally does, the configure line should be:
 ```
 ./configure --enable-preexec --prefix=/opt/omi --localstatedir=/var/opt/omi --sysconfdir=/etc/opt/omi/conf --certsdir=/etc/opt/omi/ssl --enable-ulinux
 ```
+
+### Code of Conduct
+
+This project has adopted the [Microsoft Open Source Code of Conduct]
+(https://opensource.microsoft.com/codeofconduct/).  For more
+information see the [Code of Conduct FAQ]
+(https://opensource.microsoft.com/codeofconduct/faq/) or contact
+[opencode@microsoft.com](mailto:opencode@microsoft.com) with any
+additional questions or comments.
