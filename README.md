@@ -53,11 +53,11 @@ program). The bind-utils package isn't otherwise necessary.
 
 - On CentOS 7.x
 ```
- sudo yum install git bind-utils gcc-c++ rpm-devel pam-devel openssl-devel rpm-build
+ sudo yum install git bind-utils gcc-c++ rpm-devel pam-devel openssl-devel rpm-build krb5-devel
 ```
 - On Ubuntu 14.04
 ```
- sudo apt-get install git pkg-config make g++ rpm librpm-dev libpam0g-dev libssl-dev
+ sudo apt-get install git pkg-config make g++ rpm librpm-dev libpam0g-dev libssl-dev libkrb5-dev
 ```
 
 - Notes on other platforms
