@@ -60,6 +60,21 @@ program). The bind-utils package isn't otherwise necessary.
  sudo apt-get install git pkg-config make g++ rpm librpm-dev libpam0g-dev libssl-dev libkrb5-dev
 ```
 
+- On Mac OS/X:
+
+On Mac OS/X, OMI dependencies are installed via [Homebrew][]. Once a
+[Mac OS/X machine is set up]
+(https://github.com/Microsoft/ostc-docs/blob/master/setup-macosx.md)
+properly, use a command like:
+
+```
+brew install pkg-config openssl
+```
+
+to install necessary bits to build OMI for Mac OS/X.
+
+[Homebrew]: https://github.com/Microsoft/ostc-docs/blob/master/setup-macosx.md#install-homebrew
+
 - Notes on other platforms
 
 When building a machine for ULINUX builds (such as SuSE 10), we
