@@ -201,7 +201,7 @@ directories and features to support Microsoft providers. If you wish
 to build OMI as Microsoft normally does, the configure line should be:
 
 ```
-./configure --enable-preexec --prefix=/opt/omi --localstatedir=/var/opt/omi --sysconfdir=/etc/opt/omi/conf --certsdir=/etc/opt/omi/ssl --enable-ulinux
+./configure --enable-microsoft
 ```
 
 ### Code of Conduct
