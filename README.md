@@ -55,6 +55,16 @@ program). The bind-utils package isn't otherwise necessary.
 ```
  sudo yum install git bind-utils gcc-c++ rpm-devel pam-devel openssl-devel rpm-build krb5-devel redhat-lsb-core
 ```
+
+On CentOS 7.x, you must install `gssntlmssp` to do enhanced authentication
+(beyond basic authorization). This is necessary for the unit tests, but
+is not needed for basic building of OMI. To install `gssntlmssp`, do:
+
+```
+sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo yum install gssntlmssp
+```
+
 - On Ubuntu 14.04
 ```
  sudo apt-get install git pkg-config make g++ rpm librpm-dev libpam0g-dev libssl-dev libkrb5-dev
