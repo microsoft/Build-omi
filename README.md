@@ -65,10 +65,19 @@ sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch
 sudo yum install gssntlmssp
 ```
 
-- On Ubuntu 14.04
+- On Ubuntu 14.04 and 16.04
 ```
  sudo apt-get install git pkg-config make g++ rpm librpm-dev libpam0g-dev libssl-dev libkrb5-dev
+ 
 ```
+
+  for NTLM with SPNEGO functionality (including regression tests) you must use updated packages. Until the corrected packages are available in the regular update distribution, you must add the proposed repos into /etc/apt/sources.list.
+```
+deb http://archive.ubuntu.com/ubuntu/ xenial-proposed restricted main multiverse universe
+
+```
+
+  The package libgssapi-krb5-2 from the proposed ppa will be version 1.14 or later. In addtion, you will need to add the proposed gss-ntlmssp package for xenial. It must be version 0.7.0 or later.
 
 - On Mac OS/X:
 
