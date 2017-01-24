@@ -5,6 +5,9 @@
 - [Setting up a machine to build OMI](#setting-up-a-machine-to-build-omi)
   - [Dependencies to build a native package](#dependencies-to-build-a-native-package)
   - [Setting up a system to build a universal package](#setting-up-a-system-to-build-a-universal-package)
+  - [Setting up `omi_test` account for authentication tests](#setting-up-authentication-test-account)
+    - [Set up environment variables for Authentication Tests](#set-up-environment-variables-for-authentication-tests)
+    - [Additional packages needed by Authentication Tests](#additional-packages-needed-by-authentication-tests)
 - [Cloning the repository](#cloning-the-repository)
 - [Building the agent](#building-the-agent)
   - [Building test agents](#building-test-agents)
@@ -130,6 +133,43 @@ to build both both versions of OpenSSL that we can link against.
 
 Once OpenSSL is set up, you need to configure omsagent to include the
 ```--enable-ulinux``` qualifier, like this:<br>```./configure --enable-ulinux``` 
+
+### Setting Up Authentication Test Account
+
+Create an account on the system to run the authentication tests.
+This is only needed if you plan to run unit tests or the `regress`
+script, and the system supports NTLM authentication (only recent
+Linux systems have NTLM support). The account does not require
+`sudo` access, so it does not (and should not) belong to the
+scxdev group.  
+
+By convention, this account is named `omi_test`.  If you find that
+the account already exists in the `/etc/passwd` file, then you don't
+need to do this again.
+
+#### Set up environment variables for Authentication Tests
+
+Authentication tests use the environment variables `OMI_USER` and
+`OMI_PASSWORD`. These need to be set up prior to running the tests.
+The easiest way to do this for all developers is to modify `/etc/profile`,
+which is executed for all users. Use your favorite editor and modify
+`/etc/profile`. Append following lines at end of `/etc/profile`:
+
+```
+OMI_USER=omi_test
+OMI_PASSWORD=`xxxxx
+export OMI_USER
+export OMI_PASSWORD
+```
+
+where `xxxxx` above is the actual password of account omi_test. These
+lines could also go in your `~/.bash_profile` or `~/.bashrc` file if
+you prefer.
+
+#### Additional Packages needed by Authentication Tests
+
+[Additional software packages](#dependencies-to-build-a-native-package)
+may be required on some platforms.
 
 ### Cloning the repository
 
