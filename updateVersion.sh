@@ -88,6 +88,30 @@ if [ $P_INCREMENT -ne 0 ]; then
         echo "Updated version number, Was: $VERSION_OLD, Now $VERSION_NEW"
         echo "Updated release date,   Was: $DATE_OLD, Now $DATE_NEW"
     fi
+
+    # Since build number is incremented, update the nuget version as well
+    # Nuget version is formatting: major.minor.1<2-digit-patch><3-digit-build>
+    #
+    # For this, it's easier just to load the version file ...
+
+    . $VERSION_FILE
+
+    if [ -z "$OMI_BUILDVERSION_MAJOR" \
+         -o -z "$OMI_BUILDVERSION_MINOR" \
+         -o -z "$OMI_BUILDVERSION_PATCH" \
+         -o -z "$OMI_BUILDVERSION_BUILDNR" ]; then
+        echo "Must specify -f qualifier (version file)" 1>& 2
+        exit 1
+    fi
+
+    NUGET_VERSION=`printf "%d.%d.1%02d%03d" $OMI_BUILDVERSION_MAJOR $OMI_BUILDVERSION_MINOR $OMI_BUILDVERSION_PATCH $OMI_BUILDVERSION_BUILDNR`
+
+    perl -i -pe "s/(^[A-Z]*_BUILDVERSION_NUGET)=.*/\1=$NUGET_VERSION/" $VERSION_FILE
+
+    if [ $VERBOSE -ne 0 ]; then
+        echo "Updated nuget version,  Was: $OMI_BUILDVERSION_NUGET, Now $NUGET_VERSION"
+    fi
+
 fi
 
 # Set release build
