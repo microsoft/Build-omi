@@ -100,7 +100,19 @@ if [ $P_INCREMENT -ne 0 ]; then
          -o -z "$OMI_BUILDVERSION_MINOR" \
          -o -z "$OMI_BUILDVERSION_PATCH" \
          -o -z "$OMI_BUILDVERSION_BUILDNR" ]; then
-        echo "Must specify -f qualifier (version file)" 1>& 2
+        echo "Unale to recognize OMI versioning after sourcing version file" 1>& 2
+        exit 1
+    fi
+
+    # Sanity test that the patch number is short enough for nuget encoding
+    if [ ${#OMI_BUILDVERSION_PATCH} -gt 2 ]; then
+        echo "\$OMI_BUILDVERSION_PATCH is too long for nuget encoding"
+        exit 1
+    fi
+
+    # Verify that the new build number isn't too long for nuget encoding
+    if [ ${#VERSION_NEW} -gt 3 ]; then
+        echo "New build version number is too long for nuget encoding"
         exit 1
     fi
 
