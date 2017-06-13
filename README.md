@@ -70,7 +70,7 @@ sudo yum install gssntlmssp
 
 - On Ubuntu 14.04 and 16.04
 ```
- sudo apt-get install git pkg-config make g++ rpm librpm-dev libpam0g-dev libssl-dev libkrb5-dev
+ sudo apt-get install git pkg-config make g++ rpm librpm-dev libpam0g-dev libssl-dev libkrb5-dev gawk
  
 ```
 
