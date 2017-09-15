@@ -262,6 +262,19 @@ to build OMI as Microsoft normally does, the configure line should be:
 ```
 ./configure --enable-microsoft
 ```
+### Building packages
+
+For universal linux packages, be sure to build on SUSE 10. 
+
+The configure line for building packages is 
+```
+./configure --enable-system-build --enable-native-kits
+```
+followed by
+```
+make
+```
+
 
 ### Code of Conduct
 
