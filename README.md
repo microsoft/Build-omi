@@ -274,7 +274,8 @@ followed by
 ```
 make
 ```
-
+the linux packages will be located under the directories output_openssl_0.9.8, output_openssl_1.0.0, and open_ssl_1.1.0. 
+Both .deb and .rpm packages are built on linux. 
 
 ### Code of Conduct
 
