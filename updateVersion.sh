@@ -92,6 +92,9 @@ if [ $P_INCREMENT -ne 0 ]; then
     # Since build number is incremented, update the nuget version as well
     # Nuget version is formatting: major.minor.1<2-digit-patch><3-digit-build>
     #
+    # For ease of version comparison, major and minor version numbers are limited to 
+    # 3 digits or less
+
     # For this, it's easier just to load the version file ...
 
     . $VERSION_FILE
@@ -101,6 +104,18 @@ if [ $P_INCREMENT -ne 0 ]; then
          -o -z "$OMI_BUILDVERSION_PATCH" \
          -o -z "$OMI_BUILDVERSION_BUILDNR" ]; then
         echo "Unale to recognize OMI versioning after sourcing version file" 1>& 2
+        exit 1
+    fi
+
+    # Sanity test that the major number is 3 digits or less
+    if [ ${#OMI_BUILDVERSION_MAJOR} -gt 3 ]; then
+        echo "\$OMI_BUILDVERSION_MAJOR is too large"
+        exit 1
+    fi
+
+    # Sanity test that the minor number is 3 digits or less
+    if [ ${#OMI_BUILDVERSION_MINOR} -gt 3 ]; then
+        echo "\$OMI_BUILDVERSION_MINOR is too large"
         exit 1
     fi
 
