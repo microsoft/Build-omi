@@ -15,12 +15,9 @@
 - [Code of Conduct](#code-of-conduct)
 
 If you are an active contributor to the OMI project, you should
-[set up your system]
-(https://github.com/Microsoft/ostc-docs/blob/master/setup-git.md)
-and follow our [common workflow]
-(https://github.com/Microsoft/ostc-docs/blob/master/workflow-workflow.md).
-New to git? Read [guidelines for development]
-(https://github.com/Microsoft/ostc-docs/blob/master/setup-rules.md).
+[set up your system](https://github.com/Microsoft/ostc-docs/blob/master/setup-git.md)
+and follow our [common workflow](https://github.com/Microsoft/ostc-docs/blob/master/workflow-workflow.md).
+New to git? Read [guidelines for development](https://github.com/Microsoft/ostc-docs/blob/master/setup-rules.md).
 
 -----
 
@@ -48,8 +45,7 @@ first.
 
 ### Dependencies to build a native package
 
-Note that it's very nice to be able to use the [updatedns]
-(https://github.com/jeffaco/msft-updatedns) project to use host names
+Note that it's very nice to be able to use the [updatedns](https://github.com/jeffaco/msft-updatedns) project to use host names
 rather than IP numbers in a Hyper-V environment. On CentOS systems,
 this requires the bind-utils package (updatedns requires the 'dig'
 program). The bind-utils package isn't otherwise necessary.
@@ -85,8 +81,7 @@ deb http://archive.ubuntu.com/ubuntu/ xenial-proposed restricted main multiverse
 - On Mac OS/X:
 
 On Mac OS/X, OMI dependencies are installed via [Homebrew][]. Once a
-[Mac OS/X machine is set up]
-(https://github.com/Microsoft/ostc-docs/blob/master/setup-macosx.md)
+[Mac OS/X machine is set up](https://github.com/Microsoft/ostc-docs/blob/master/setup-macosx.md)
 properly, use a command like:
 
 ```
@@ -128,7 +123,7 @@ Linux systems.
 
 A notable exception: We use the OpenSSL package, and we can't tell if
 we need OpenSSL v0.9.8 or OpenSSL v1.0.x. As a result, we have a [special
-process] (https://github.com/Microsoft/ostc-openssl/blob/master/README.md)
+process](https://github.com/Microsoft/ostc-openssl/blob/master/README.md)
 to build both versions of OpenSSL that we can link against.
 
 Once OpenSSL is set up, you need to configure omsagent to include the
@@ -174,8 +169,7 @@ may be required on some platforms.
 ### Cloning the repository
 
 Note that there are several subprojects, and authentication is a hassle
-unless you set up an SSH key via your GitHub account. [Set up your machine]
-(https://github.com/Microsoft/ostc-docs/blob/master/setup-git.md)
+unless you set up an SSH key via your GitHub account. [Set up your machine](https://github.com/Microsoft/ostc-docs/blob/master/setup-git.md)
 properly for a much easier workflow.
 
 To clone the repository to build OMI, issue the following command:
@@ -278,9 +272,7 @@ Both .deb and .rpm packages are built on linux.
 
 ### Code of Conduct
 
-This project has adopted the [Microsoft Open Source Code of Conduct]
-(https://opensource.microsoft.com/codeofconduct/).  For more
-information see the [Code of Conduct FAQ]
-(https://opensource.microsoft.com/codeofconduct/faq/) or contact
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).  For more
+information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact
 [opencode@microsoft.com](mailto:opencode@microsoft.com) with any
 additional questions or comments.
