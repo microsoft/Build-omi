@@ -70,13 +70,13 @@ sudo yum install gssntlmssp
  
 ```
 
-  for NTLM with SPNEGO functionality (including regression tests) you must use updated packages. Until the corrected packages are available in the regular update distribution, you must add the proposed repos into /etc/apt/sources.list.
+  for NTLM with SPNEGO functionality (including regression tests) you must use updated packages. Until the corrected packages are available in the regular update distribution, you must add the proposed repos into `/etc/apt/sources.list.`
 ```
 deb http://archive.ubuntu.com/ubuntu/ xenial-proposed restricted main multiverse universe
 
 ```
 
-  The package libgssapi-krb5-2 from the proposed ppa will be version 1.14 or later. In addtion, you will need to add the proposed gss-ntlmssp package for xenial. It must be version 0.7.0 or later.
+  The package libgssapi-krb5-2 from the proposed ppa will be version 1.14 or later. In addition, you will need to add the proposed gss-ntlmssp package for xenial. It must be version 0.7.0 or later.
 
 - On Mac OS/X:
 
@@ -96,7 +96,7 @@ to install necessary bits to build OMI for Mac OS/X.
 
 When building a machine for ULINUX builds (such as SuSE 10), we
 suggest using the O/S distribution CD to install the packages. It's
-not as easy, but that's the only way to guarentee that packages aren't
+not as easy, but that's the only way to guarantee that packages aren't
 updated such that generated binaries are not backwards
 compatible. (See notes on building a universal package, elsewhere in
 this document.) Note that ULinux builds are controlled via the
@@ -111,7 +111,7 @@ not registered for use for up2date.
 
 For universal builds, we recommend the use of a SuSE 10 system. The
 SuSE 10 release is slightly older than RedHat 5.0, and thus builds
-backwards compaibility binaries for all of the Linux platforms that we
+backwards compatibility binaries for all of the Linux platforms that we
 support.
 
 ### Setting up a system to build a universal package
@@ -124,7 +124,7 @@ Linux systems.
 A notable exception: We use the OpenSSL package, and we can't tell if
 we need OpenSSL v0.9.8 or OpenSSL v1.0.x. As a result, we have a [special
 process](https://github.com/Microsoft/ostc-openssl/blob/master/README.md)
-to build both both versions of OpenSSL that we can link against.
+to build both versions of OpenSSL that we can link against.
 
 Once OpenSSL is set up, you need to configure omsagent to include the
 ```--enable-ulinux``` qualifier, like this:<br>```./configure --enable-ulinux``` 
@@ -221,7 +221,7 @@ popd
 
 ##### Building Release Agents
 
-From the bld-omi directory (created above from 'git clone', do the
+From the bld-omi directory (created above from 'git clone'), do the
 following:
 
 ```
@@ -235,7 +235,7 @@ can use ```configure --help``` to see the options available.
 
 When the build completes, you should have a native package that you
 can install on your system. The native package should be in a
-subdirectory off of bld-omi/omi/Unix/output.
+subdirectory off of `bld-omi/omi/Unix/output`.
 
 To build a universal build, the configure line must be modified to
 include the `--enable-ulinux` qualifier, like this:
@@ -267,7 +267,7 @@ followed by
 ```
 make
 ```
-the linux packages will be located under the directories output_openssl_0.9.8, output_openssl_1.0.0, and open_ssl_1.1.0. 
+the linux packages will be located under the directories `output_openssl_0.9.8`, `output_openssl_1.0.0`, and `open_ssl_1.1.0.` 
 Both .deb and .rpm packages are built on linux. 
 
 ### Code of Conduct
