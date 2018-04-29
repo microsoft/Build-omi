@@ -157,7 +157,7 @@ export OMI_USER
 export OMI_PASSWORD
 ```
 
-where `xxxxx` above is the actual password of account omi_test. These
+where `xxxxx` above is the actual password of account `omi_test`. These
 lines could also go in your `~/.bash_profile` or `~/.bashrc` file if
 you prefer.
 
@@ -221,7 +221,7 @@ popd
 
 ##### Building Release Agents
 
-From the bld-omi directory (created above from 'git clone'), do the
+From the `bld-omi` directory (created above from 'git clone'), do the
 following:
 
 ```
