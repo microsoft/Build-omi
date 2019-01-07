@@ -1,7 +1,7 @@
 [submodule "omi"]
 	path = omi
 	url = git@github.com:Microsoft/omi.git
-	branch = master
+	branch = jagmohan-sdl
 [submodule "pal"]
 	path = pal
 	url = git@github.com:Microsoft/pal.git
