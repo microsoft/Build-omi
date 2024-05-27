@@ -116,7 +116,7 @@ support.
 
 ### Setting up a system to build a universal package
 
-To build a universal package, we need and older Linux system (we
+To build a universal package, we need an older Linux system (we
 typically use SuSE 10.0 for this), as binary images created with older
 Linux systems are generally upwards compatible when installed on newer
 Linux systems.
